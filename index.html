@@ -1,63 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juego del ahorcado</title>
-</head>
-<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>AHORCADO</h1>
+      <h1 class="titulo animate__animated animate__pulse animate__infinite">ahorcado</h1>
     </header>
     <main>
-        <section>
-            <div class="box">
-                <h2>Imagen del AHORCADO</h2>
-                <img src="data:image/png;base64,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" alt="Imagen del juego del AHORCADO">
-            </div>
-            <div class="box">
-                <h2>Palabra secreta</h2>
-                <div class="secreta">
-                    <p>_</p>&nbsp; <p>_</p>&nbsp; <p>_</p>&nbsp; <p>_</p>&nbsp; <p>_</p>&nbsp; <p>_</p>&nbsp;
-                </div>
-                <div class="letras">
-                    <button>a</button>
-                    <button>b</button>
-                    <button>c</button>
-                    <button>d</button>
-                    <button>e</button>
-                    <button>f</button>
-                    <button>g</button>
-                    <button>h</button>
-                    <button>i</button>
-                    <button>j</button>
-                    <button>k</button>
-                    <button>l</button>
-                    <button>ñ</button>
-                    <button>n</button>
-                    <button>m</button>
-                    <button>o</button>
-                    <button>p</button>
-                    <button>q</button>
-                    <button>r</button>
-                    <button>s</button>
-                    <button>t</button>
-                    <button>u</button>
-                    <button>v</button>
-                    <button>w</button>
-                    <button>x</button>
-                    <button>y</button>
-                    <button>z</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <a href="index.html">Juego nuevo</a>
-        </section>
+      <section>
+        <div class="box">
+          <h2 class="titulo-imagen ">Imagen del AHORCADO</h2>
+          <img
+            class="imagen-ahorcado"
+            src="data:image/png;base64,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"
+            alt="Imagen del juego del AHORCADO"
+          />
+        </div>
+
+        <div class="box">
+          <h2 class="palabra">Palabra secreta</h2>
+
+          <div class="secreta">
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+          </div>
+
+          <div class="letras">
+            <button>a</button>
+            <button>b</button>
+            <button>c</button>
+            <button>d</button>
+            <button>e</button>
+            <button>f</button>
+            <button>g</button>
+            <button>h</button>
+            <button>i</button>
+            <button>j</button>
+            <button>k</button>
+            <button>l</button>
+            <button>ñ</button>
+            <button>n</button>
+            <button>m</button>
+            <button>o</button>
+            <button>p</button>
+            <button>q</button>
+            <button>r</button>
+            <button>s</button>
+            <button>t</button>
+            <button>u</button>
+            <button>v</button>
+            <button>w</button>
+            <button>x</button>
+            <button>y</button>
+            <button>z</button>
+          </div>
+        </div>
+      </section>
+      <section class="contenedor-cargar">
+        <a class="cargar" href="index.html">Juego nuevo</a>
+      </section>
     </main>
     <footer>
-        <h2>ELABORADO POR ANGEL AGUSTIN PADILLA</h2>
+      <h2>ELABORADO POR ANGEL AGUSTIN PADILLA</h2>
     </footer>
-</body>
+  </body>
 </html>
