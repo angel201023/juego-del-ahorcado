@@ -40,8 +40,53 @@ section {
   text-align: center;
 }
 .imagen-ahorcado {
+  position: relative;  
   width: 100%;
-  height: 80%;
+  height: 80%; 
+  display: flex;
+  justify-content: center;
+}
+.poste {
+    height: 80%;
+}
+.lazo {
+    position:absolute;
+    height: 24%;
+    top: 73px;
+    left: 23rem;
+}
+.cabeza,
+.cuerpo,
+.brazo-derecho,
+.brazo-izquierdo,
+.pie-derecho,
+.pie-izquierdo {
+    position: absolute;
+}
+.cabeza{
+    height: 15%;
+    top: 6.5rem;
+    left: 22rem;
+}
+.cuerpo {
+    top: 10.6rem;
+    right: 8.2rem;
+}
+.brazo-derecho {
+    top: 10.3rem;
+    right: 11rem;
+}
+.brazo-izquierdo {
+    top: 10.3rem;
+    right: 4.2rem;
+}
+.pie-derecho {
+    top: 16.9rem;
+    right: 10rem;
+}
+.pie-izquierdo {
+    top: 16.9rem;
+    right: 6rem;
 }
 .palabra {
   background-color: rgb(202, 118, 73);
@@ -81,11 +126,16 @@ button {
     color: #000000;
     font-family: 'Abril Fatface', cursive;  
     text-decoration: none;
+    animation: pulse;
+    animation-duration: 1s;
+    
 }
 
 .cargar:hover{
-    text-transform: uppercase;
-    cursor: pointer;
+    /*text-transform: uppercase;*/
+    animation-iteration-count: infinite;
+    cursor: -webkit-grab; 
+    cursor: grab;
 }
 
 /*---------------------Footer-------------------------------------*/
